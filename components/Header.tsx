@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Camera, Heart, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useFavorites } from "@/store/hooks";
 
 /**
  * Header Component
@@ -12,10 +13,11 @@ import { cn } from "@/lib/utils";
  */
 export default function Header() {
   const pathname = usePathname();
+  const { favorites } = useFavorites();
 
   const navItems = [
     { path: "/", label: "Gallery", icon: Home },
-    { path: "/favorites", label: "Favorites", icon: Heart },
+    { path: "/favorites", label: "Favorites", icon: Heart, count: favorites.length },
   ];
 
   return (

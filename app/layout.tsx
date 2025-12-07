@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Heart } from "lucide-react";
+import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import "./globals.css";
 
@@ -32,18 +33,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased">
-        <div className="min-h-screen gallery-gradient">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <footer className="py-8 text-center text-gray-500 text-sm border-t border-white/10">
-            <p className="flex items-center justify-center gap-1 text-sm text-gray-500">
-              Build with <Heart className="h-4 w-4" /> by{" "}
-              <a href="https://www.linkedin.com/in/saiefalemon/" className="hover:underline">
-                Saief Al Emon
-              </a>
-            </p>
-          </footer>
-        </div>
+        <Providers>
+          <div className="min-h-screen gallery-gradient">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <footer className="py-8 text-center text-gray-500 text-sm border-t border-white/5">
+              <p className="flex items-center justify-center gap-1 text-sm text-gray-500">
+                Build with <Heart className="h-4 w-4" /> by{" "}
+                <a href="https://www.linkedin.com/in/saiefalemon/" className="hover:underline">
+                  Saief Al Emon
+                </a>
+              </p>
+            </footer>
+          </div>
+        </Providers>
       </body>
     </html>
   );

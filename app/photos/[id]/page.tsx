@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, Download, Heart, Eye, User, Share2, ExternalLink, ImageIcon } from "lucide-react";
 import { fetchPhotoById } from "@/lib/api";
 import { formatNumber } from "@/lib/utils";
+import FavoriteButton from "@/components/FavoriteButton";
 
 interface PhotoDetailPageProps {
   params: { id: string };
@@ -66,6 +67,7 @@ export default async function PhotoDetailPage({ params }: PhotoDetailPageProps) 
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 66vw"
+                className="object-cover"
               />
             </div>
           </div>
@@ -84,6 +86,12 @@ export default async function PhotoDetailPage({ params }: PhotoDetailPageProps) 
 
             {/* Action buttons */}
             <div className="flex flex-wrap gap-3">
+              {/* Favorite button */}
+              <FavoriteButton
+                photoId={photo.id}
+                customClassName="rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              />
+
               <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-2">
                 <Share2 className="h-4 w-4" />
                 Share

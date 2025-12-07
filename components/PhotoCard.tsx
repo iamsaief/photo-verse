@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Heart, Eye } from "lucide-react";
 import { Photo } from "@/types/photo";
 import { cn, formatNumber } from "@/lib/utils";
+import FavoriteButton from "./FavoriteButton";
 
 interface PhotoCardProps {
   photo: Photo;
@@ -104,6 +105,9 @@ const PhotoCard = memo(function PhotoCard({ photo, index, priority = false }: Ph
           </div>
         </div>
       </div>
+
+      {/* Favorite button */}
+      <FavoriteButton photoId={photo.id} customClassName="absolute right-3 top-3 rounded-full" />
 
       {/* Favorite button */}
       <div
