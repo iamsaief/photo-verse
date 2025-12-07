@@ -36,8 +36,7 @@ const PhotoCard = memo(function PhotoCard({ photo, index, priority = false }: Ph
         "group relative block overflow-hidden rounded-xl",
         "bg-gray-800 shadow-lg",
         "transition-all duration-500 ease-out",
-        "hover:shadow-2xl hover:shadow-black/50",
-        "focus:outline-none focus:ring-2 focus:ring-gold-500/50",
+        "hover:shadow-glow",
         "animate-fade-in",
         isLarge && "sm:row-span-2"
       )}

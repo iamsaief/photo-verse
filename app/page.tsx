@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Camera } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { fetchPhotos } from "@/lib/api";
 import PhotoGrid from "@/components/PhotoGrid";
 import { randomBetween } from "@/lib/utils";
@@ -16,7 +16,7 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm text-primary mb-4">
-          <Camera className="h-4 w-4" />
+          <Sparkles className="h-4 w-4" />
           <span className="font-medium">Curated Collection</span>
         </div>
         <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">

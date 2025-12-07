@@ -32,7 +32,7 @@ export default function Header() {
               <Camera className="h-7 w-7 transition-transform group-hover:scale-110" />
               <div className="absolute -bottom-1 -right-1 h-2 w-2 rounded-full bg-primary animate-pulse" />
             </div>
-            <span className="font-display text-xl font-semibold tracking-tight">Lumière</span>
+            <span className="font-display text-xl font-semibold tracking-tight">PhotoVerse</span>
           </Link>
 
           {/* Navigation */}
